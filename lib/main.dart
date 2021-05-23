@@ -18,7 +18,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List data;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +30,7 @@ class _HomePageState extends State<HomePage> {
             future:
                 DefaultAssetBundle.of(context).loadString("demojson/demo.json"),
             builder: (context, snapshot) {
+              print(snapshot.data);
               var mydata = json.decode(snapshot.data.toString());
               return ListView.builder(
                 itemBuilder: (BuildContext context, int index) {
