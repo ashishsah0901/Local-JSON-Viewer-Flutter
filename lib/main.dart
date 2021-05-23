@@ -12,7 +12,13 @@ void main() {
   );
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List data;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,10 +38,8 @@ class HomePage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Text("UserId: " + mydata[index]["userId"]),
-                        Text("Id: " + mydata[index]["id"]),
-                        Text("Title: " + mydata[index]["title"]),
-                        Text("Completed: " + mydata[index]["completed"]),
+                        Text("Name: " + mydata[index]["name"]),
+                        Text("Age: " + mydata[index]["age"]),
                       ],
                     ),
                   );
